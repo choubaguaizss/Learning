@@ -13,3 +13,39 @@ Here I find Subversion/Trac to be much simpler while Clearcase/Clearquest can su
 Note that IBM has a new suite of integrated Application Lifecycle Management (ALM) tools based on their JAZZ framework known as Rational Team Concert.
 
 Conclusion: It is the opinion of this author that complexity comes at a cost. Clearcase (and Clearquest/Buildforge) supports many ways of approaching CM with many levels of customization which may be required at some corporations but at the cost of difficulty to administer and use. I find that the open source quartet of Subversion (and ViewVC/Trac/Jenkins) perform at a reasonable level of sophistication without the burden of over complexity on either the programmer or the administrator.
+
+
+Clearcase
+  configspec:
+  Configspec:
+Configspec specifies rules of viewing specified elements which will be shown in a given view. The system default configspec can be found in $ATRIAHOME/default_config_spec (Typically: /usr/atria/default_config_spec)
+
+Basic configspec: 
+(/destination viewstore/view-tag.vws/config_spec)
+
+element * CHECKEDOUT
+element * /main/LATEST
+    
+Pattern matching:
+
+Pattern	          Description
+---------------------------------------------------------------------------------------------------------------------------------
+*	                Matches all elements in the path but not recursively.
+*.h	              Matches all elements in the path which match the suffix ".h", but not recursively.
+src/Makefile	    Matches all elements in the path in a directory named "src" which match this file name.
+src/.../Makefile	Matches all elements in the directory/subdirectory tree named "src" which match this file name.
+src/.../*.[ch]	  Matches all elements with the suffic ".h" and ".c" in the directory/subdirectory tree named "src".
+src/...	          Matches all elements (files and directories) in the directory/subdirectory tree named "src".
+
+Config Rule	                              Description
+-------------------------------------------------------------------------------------------------------------------------------
+element * CHECKEDOUT	                    This rule is mandatory. Without this rule, any file that is checked out will not be seen in a view.
+element -directory * /main/LATEST	        Look at latest version of the directory on the main branch.
+element -directory * /branch-name/LATEST	Look at latest version of the directory on the defined branch.
+element -file * /main/version-number	    Show this particular version number of all files in view.
+element * LABEL	                          Show elements with this label. (i.e. element * /main/LABEL3)
+element * rule-name -time time
+element * rule-name -time 26-Oct.14:32	  Show elements which comply with this rule and last modified prior to time
+element * rule-name -time time	          Show elements which comply with this rule and last modified prior to time
+element * /vob/vob-name/AppName/* LABEL	  Show elements in the specified directory with the given label.
+element /vob/projectA/... /main/LATEST	  Rule applies only to specified directory hierarchy.
