@@ -1,0 +1,8 @@
+Debugging can be done in different ways. Two of them are,
+	  Static debugging
+	  Dynamic debugging
+Static Debugging
+	Analysing the code for errors and possible mistakes even before compiling is called as static debugging.
+
+Dynamic debugging
+	Debugging at run time using debugging hardware such as JTAG is called dynamic debugging.

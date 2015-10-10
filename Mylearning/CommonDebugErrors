@@ -1,0 +1,23 @@
+Locking errors
+Null pointer de-reference
+Use after free
+Double free
+Array indexing errors
+Mismatched array new/delete
+Stack overrun
+Heap overrun
+Return pointers to local variables
+Logically inconsistent code
+Insecure use of user data
+Un-initialized variables
+Invalid use of negative values
+Passing large parameters by value
+Under-allocations of dynamic data
+Memory leaks
+File handle leaks
+Network resource leaks
+Unused values
+Un-handled return codes
+Use of invalid iterators
+File-based race conditions
+
