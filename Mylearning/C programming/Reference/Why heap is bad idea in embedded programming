@@ -1,0 +1,10 @@
+I have used heaps on embedded systems with arm-gcc toolchain. The pain points are,
+- if you try to allocate more memory that what your heap section can provide, it will grow into stack section causing memory corruption [and there is a good chance that this won’t happen during development or QA phase, SoC with an MPU helps!]
+- if you allocate memory you should free it after you are done, if you keep on allocating, you will soon run out of heap [refer point 1]
+- memory leaks, well its the same story as above point but with a twist, leaking memory on an embedded system is a big Oopsie!
+- if you don’t allocate and deallocate properly, your heap will get fragmented and possibly point number 1 can happen!
+- malloc & new are not reentrant or thread safe, so if you ever use them, do it only inside critical section [or you make sure that no two malloc/new call can happen simultaneously
+
+If not done properly your program can go bananas on your end-user.
+
+My advice is not to use heaps until you have a good handle on it, if it can be handled by static memory or memory pool, look into those
