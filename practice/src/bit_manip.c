@@ -1,4 +1,42 @@
+#include "stdio.h"
 #include "../include/bit_manip.h"
+#define MAX_TRY 5
+#define EXIT_PROGRAM 9
+void bit_manip_main()
+{
+	unsigned int option = 0;
+	unsigned int exit_count=0;
+	unsigned int my_word = 0;
+	unsigned char position = 0;
+	while(exit_count < MAX_TRY)
+	{
+		//print_options_main();
+		scanf("%d", &option);
+		if(EXIT_PROGRAM == option)	
+		{
+			printf("Hope you enjoyed learning \"Bit manipulation\", Goodbye!!!\r\n");
+			break;
+		}
+		switch(option)
+		{
+			case 1:
+				printf("Enter the word in which you want to set a bit\r\n");
+				scanf("%d",&my_word);
+				printf("Enter the position which you want to set\r\n");
+				scanf("%d",&position);
+				set_bit(&my_word,position);
+				printf("%d",my_word);
+				break;
+			case 2:
+				printf("case 2\r\n");
+				break;
+			default:
+				printf("Wrong option!!! Try again\r\n");
+				exit_count++;
+				break;
+		}
+	}
+}
 void set_bit(unsigned int *p_word, unsigned char position)
 {
 	*p_word = *p_word & (1<<position);
