@@ -1,0 +1,123 @@
+======STM32 Primer programming with OpenOCD on GNU/Linux======
+{{ stm32circle.jpg }}
+
+[Thanks to [[http://www.PaintYourDragon.com/uc/|Phillip Burgess]] for the above image!]
+
+The [[http://www.stm32circle.com|STM32 Primer]] is a very innovative (and low cost) evaluation kit for the STM32F103RB ARM Cortex-M3 based processor from ST.
+
+For a change, instead of a drab rectangular PCB, the Primer comes packaged as a nice little CIRCLE - with a good quality color LCD display and an accelerometer as an input device. The "cursor" on the LCD screen is controlled by tilting the Primer!
+
+The only trouble was, you had to boot into (horror) MS-Windows to write cute little applications for the device.
+
+But that was the past - the great guys who wrote [[http://openocd.berlios.de|OpenOCD]] have made sure that you no longer have to suffer this horror - it's now perfectly possible to do all kinds of Primer-based development on a pure Free Software platform!
+
+[Note: we are referring to the first version of the primer device here - the "Primer1"]
+
+======What is OpenOCD?======
+
+Most modern microprocessors/controllers provide JTAG support to facilitate debugging. Trouble is, proprietary JTAG solutions can be very costly; most hobbyists won't be able to afford one. Dominic Rath's [[http://openocd.berlios.de/|OpenOCD project]] is a wonderful effort to provide a free software solution to the JTAG interfacing problem.   
+
+The STM32 primer provides a USB based JTAG interface (called `rlink') - OpenOCD is capable of using the rlink interface to control the STM32F103RB processor.
+
+
+======Compiling OpenOCD (with rlink support)======
+The current version of OpenOCD (released on Feb 13, 2009) is 0.1.0. You can download it from [[http://download.berlios.de/openocd/openocd-0.1.0.tar.gz|here]].
+
+Compile with rlink support enabled:
+
+  ./configure --enable-rlink
+   make
+
+The OpenOCD binary will be available in the folder `src'.
+
+======Connecting to the Primer======
+Plug a USB cable to the "debug" port on the primer. Here is what you might see if you run `dmesg':
+
+  New USB device found, idVendor=138e, idProduct=9000
+  New USB device strings: Mfr=1, Product=2, SerialNumber=3
+  Product: Raisonance RLINKUSB Dongle. 
+  Manufacturer: RAISONANCE S.A.   
+  SerialNumber: dngWNYe00002910
+
+Now run `openocd':
+
+  src/openocd -f src/target/interface/rlink.cfg -f src/target/board/stm32f10x_128k_eval.cfg
+
+You should see output which looks like this:
+
+  $URL: https://kc8apf@svn.berlios.de/svnroot/repos/openocd/tags/openocd-0.1.0/src/openocd.c $
+  500 kHz
+  Info : JTAG tap: stm32.cpu tap/device found: 0x3ba00477 (Manufacturer: 0x23b, Part: 0xba00, Version: 0x3)
+  Info : JTAG Tap/device matched
+  Info : JTAG tap: stm32.bs tap/device found: 0x16410041 (Manufacturer: 0x020, Part: 0x6410, Version: 0x1)
+  Info : JTAG Tap/device matched
+  Warn : no telnet port specified, using default port 4444
+  Warn : no gdb port specified, using default port 3333
+  Warn : no tcl port specified, using default port 6666
+
+OpenOCD runs as a server (listening to port 4444 by default); connect to it using `telnet':
+
+  $ telnet localhost 4444
+  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  Open On-Chip Debugger
+  > 
+
+And run a few commands to test if things are working fine:
+
+  > halt
+  target was in unknown state when halt was requested
+
+  > flash probe 0
+  device id = 0x20016410
+  flash size = 128kbytes
+  flash 'stm32x' found at 0x08000000
+
+OpenOCD reports that the flash memory in the STM32F103 device is organized as a "flash bank" of 1Kb sectors. Let's check whether these "sectors" are erased or not:
+
+  > flash erase_check 0
+
+The argument to erase_check is the bank number.    
+
+Let's erase sector 0 and write some data to it:
+
+  > flash erase_sector 0 0 0
+  > flash write_bank 0 /absolute/path/to/file.bin 0
+
+The first argument to erase_sector is the bank number; the second and third parameters are the first and last sectors to erase.
+
+The first argument to write_bank is the bank number and the third argument is the offset at which data is to be written. Note that OpenOCD expects a file containing pure binary data (and not something like a .hex file).
+
+If the flash memory is "locked", we will have to unlock it before erasing:
+
+  > stm32x_unlock 0
+
+The parameter 0 is the number of the flash bank to be unlocked.
+
+
+Here is how to read a word from memory (0x40021014 is address of the AHBENR register whose reset value is 0x14)
+
+  mdw 0x40021014
+
+======Remote debugging with GDB======
+
+OpenOCD will accept connections from //gdb// (which can even be running on a different machine on the network). The default port on which OpenOCD listens for gdb connection is 3333. When we issue a gdb command to say display the contents of a CPU register, gdb will relay this command to OpenOCD which will perform the required actions and convey the result back to //gdb//. 
+
+There is some problem with the version of gdb distributed by CodeSourcery as part of //cs2008q3-66//. Gdb which comes with //cs2007q3-53// works fine.
+
+If OpenOCD and gdb are both running on the same machine, the following command (issued at the gdb prompt) connects gdb with OpenOCD:
+
+  (gdb) target remote :3333
+
+=====A few useful gdb commands=====
+  * p/x $r0    ----   prints register r0's value in hex. Any register name can be used in the place of r0.
+  * x/1xw 0x20000000  ----  prints 1 word at location 0x20000000 in hexadecimal.
+  * set {int}0x20000000 = 10  ----  change the value of memory location 0x20000000 to 10.
+
+
+
+======Scripting OpenOCD with Tcl======
+
+  
+ 

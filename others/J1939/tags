@@ -1,0 +1,167 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADDRESS_CLAIM_RX	J1939.C	68;"	d	file:
+ADDRESS_CLAIM_TX	J1939.C	67;"	d	file:
+Array	J1939.H	/^	unsigned char		Array[J1939_MSG_LENGTH + J1939_DATA_LENGTH];$/;"	m	union:J1939_MESSAGE_UNION
+BIE0Val	J1939.H	/^			unsigned char	BIE0Val;$/;"	m	struct:TX_BUFFER_INFO_STRUCT
+BOOL	J1939.C	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	t	typeref:enum:_BOOL	file:
+BOOL	J1939.H	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	t	typeref:enum:_BOOL
+BUFFER_TABLE	J1939.H	/^			static rom struct TX_BUFFER_INFO_STRUCT BUFFER_TABLE[ECAN_MAX_TX_BUFFERS] = {$/;"	v	typeref:struct:TX_BUFFER_INFO_STRUCT
+BUFFER_TABLE	J1939.H	/^		static rom struct TX_BUFFER_INFO_STRUCT BUFFER_TABLE[ECAN_MAX_TX_BUFFERS] = {$/;"	v	typeref:struct:TX_BUFFER_INFO_STRUCT
+CA_Name	J1939.C	/^unsigned char					CA_Name[J1939_DATA_LENGTH];$/;"	v
+CannotClaimAddress	J1939.H	/^		unsigned int	CannotClaimAddress				: 1;$/;"	m	struct:J1939_FLAGS_UNION::__anon2
+CommandedAddress	J1939.C	/^unsigned char 					CommandedAddress;$/;"	v
+CommandedAddressName	J1939.C	/^	unsigned char 				CommandedAddressName[J1939_DATA_LENGTH];$/;"	v
+CommandedAddressSource	J1939.C	/^	unsigned char				CommandedAddressSource;$/;"	v
+CompareName	J1939.C	/^signed char CompareName( unsigned char *OtherName )$/;"	f
+ContentionWaitTime	J1939.C	/^unsigned long 					ContentionWaitTime;$/;"	v
+CopyName	J1939.C	/^void CopyName(void)$/;"	f
+Data	J1939.H	/^		unsigned char	Data[J1939_DATA_LENGTH];$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+DataLength	J1939.H	/^		unsigned int	DataLength 			: 4;$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+DataPage	J1939.H	/^		unsigned int	DataPage			: 1;$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+DestinationAddress	J1939.H	157;"	d
+ECAN_BUFFER_INTERRUPT_ENABLE	J1939.H	237;"	d
+ECAN_BUFFER_INTERRUPT_ENABLE	J1939.H	261;"	d
+ECAN_BUFFER_INTERRUPT_ENABLE	J1939.H	283;"	d
+ECAN_BUFFER_INTERRUPT_ENABLE	J1939.H	303;"	d
+ECAN_BUFFER_INTERRUPT_ENABLE	J1939.H	321;"	d
+ECAN_BUFFER_INTERRUPT_ENABLE	J1939.H	337;"	d
+ECAN_BUFFER_INTERRUPT_ENABLE	J1939.H	351;"	d
+ECAN_CONFIGURE_BUFFERS	J1939.H	236;"	d
+ECAN_CONFIGURE_BUFFERS	J1939.H	260;"	d
+ECAN_CONFIGURE_BUFFERS	J1939.H	282;"	d
+ECAN_CONFIGURE_BUFFERS	J1939.H	302;"	d
+ECAN_CONFIGURE_BUFFERS	J1939.H	320;"	d
+ECAN_CONFIGURE_BUFFERS	J1939.H	336;"	d
+ECAN_CONFIGURE_BUFFERS	J1939.H	350;"	d
+ECAN_CONFIG_MODE	J1939.C	69;"	d	file:
+ECAN_ERROR_INT_ENABLE	J1939.C	70;"	d	file:
+ECAN_IS_CAN_MODULE	J1939.H	178;"	d
+ECAN_IS_CAN_MODULE	J1939.H	180;"	d
+ECAN_IS_CAN_MODULE	J1939.H	182;"	d
+ECAN_IS_CAN_MODULE	J1939.H	184;"	d
+ECAN_LEGACY_MODE	J1939.H	190;"	d
+ECAN_LEGACY_MODE	J1939.H	191;"	d
+ECAN_MAX_TX_BUFFERS	J1939.H	206;"	d
+ECAN_MAX_TX_BUFFERS	J1939.H	223;"	d
+ECAN_NORMAL_MODE	J1939.C	71;"	d	file:
+ECAN_RX_INT_ENABLE_FIFO	J1939.C	72;"	d	file:
+ECAN_RX_INT_ENABLE_LEGACY	J1939.C	73;"	d	file:
+ECAN_SELECT_RX_BUFFER	J1939.C	74;"	d	file:
+ECAN_SET_FIFO_MODE	J1939.C	76;"	d	file:
+ECAN_SET_LEGACY_MODE	J1939.C	75;"	d	file:
+ECAN_TX_INT_ENABLE_LEGACY	J1939.C	77;"	d	file:
+FALSE	J1939.C	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	e	enum:_BOOL	file:
+FALSE	J1939.H	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	e	enum:_BOOL
+FIFOEMPTY_MASK	J1939.C	98;"	d	file:
+FIFOEMPTY_READ_BIT	J1939.C	99;"	d	file:
+FIFOEMPTY_WRITE_BIT	J1939.C	100;"	d	file:
+FlagVal	J1939.H	/^	unsigned char		FlagVal;$/;"	m	union:J1939_FLAGS_UNION
+GettingCommandedAddress	J1939.H	/^		unsigned int	GettingCommandedAddress			: 1;$/;"	m	struct:J1939_FLAGS_UNION::__anon2
+GotFirstDataPacket	J1939.H	/^		unsigned int	GotFirstDataPacket				: 1;$/;"	m	struct:J1939_FLAGS_UNION::__anon2
+GroupExtension	J1939.H	156;"	d
+J1939_ACCESS_DENIED_CONTROL_BYTE	J1939.H	98;"	d
+J1939_ACK_CONTROL_BYTE	J1939.H	96;"	d
+J1939_ACK_PRIORITY	J1939.H	79;"	d
+J1939_Address	J1939.C	/^unsigned char 					J1939_Address;$/;"	v
+J1939_AddressClaimHandling	J1939.C	/^static void J1939_AddressClaimHandling( unsigned char Mode )$/;"	f	file:
+J1939_BAM_CONTROL_BYTE	J1939.H	109;"	d
+J1939_CANNOT_RESPOND_CONTROL_BYTE	J1939.H	99;"	d
+J1939_CONNABORT_CONTROL_BYTE	J1939.H	110;"	d
+J1939_CONTROL_PRIORITY	J1939.H	75;"	d
+J1939_CTS_CONTROL_BYTE	J1939.H	107;"	d
+J1939_DATA_LENGTH	J1939.H	138;"	d
+J1939_DequeueMessage	J1939.C	/^unsigned char J1939_DequeueMessage( J1939_MESSAGE *MsgPtr )$/;"	f
+J1939_EOMACK_CONTROL_BYTE	J1939.H	108;"	d
+J1939_EnqueueMessage	J1939.C	/^unsigned char J1939_EnqueueMessage( J1939_MESSAGE *MsgPtr )$/;"	f
+J1939_FALSE	J1939.C	62;"	d	file:
+J1939_FALSE	J1939.H	69;"	d
+J1939_FLAG	J1939.H	/^typedef union J1939_FLAGS_UNION J1939_FLAG;$/;"	t	typeref:union:J1939_FLAGS_UNION
+J1939_FLAGS_UNION	J1939.H	/^union J1939_FLAGS_UNION {$/;"	u
+J1939_Flags	J1939.C	/^J1939_FLAG    					J1939_Flags;$/;"	v
+J1939_GLOBAL_ADDRESS	J1939.H	86;"	d
+J1939_INFO_PRIORITY	J1939.H	76;"	d
+J1939_ISR	J1939.C	/^void J1939_ISR( void )$/;"	f
+J1939_Initialization	J1939.C	/^void J1939_Initialization( BOOL InitNAMEandAddress )$/;"	f
+J1939_MESSAGE	J1939.H	/^typedef union J1939_MESSAGE_UNION J1939_MESSAGE;$/;"	t	typeref:union:J1939_MESSAGE_UNION
+J1939_MESSAGE_UNION	J1939.H	/^union J1939_MESSAGE_UNION {$/;"	u
+J1939_MSG_LENGTH	J1939.H	137;"	d
+J1939_NACK_CONTROL_BYTE	J1939.H	97;"	d
+J1939_NULL_ADDRESS	J1939.H	87;"	d
+J1939_PF_ACKNOWLEDGMENT	J1939.H	95;"	d
+J1939_PF_ADDRESS_CLAIMED	J1939.H	120;"	d
+J1939_PF_CANNOT_CLAIM_ADDRESS	J1939.H	121;"	d
+J1939_PF_DT	J1939.H	103;"	d
+J1939_PF_PROPRIETARY_A	J1939.H	122;"	d
+J1939_PF_PROPRIETARY_B	J1939.H	123;"	d
+J1939_PF_REQUEST	J1939.H	101;"	d
+J1939_PF_REQUEST2	J1939.H	92;"	d
+J1939_PF_TP_CM	J1939.H	105;"	d
+J1939_PF_TRANSFER	J1939.H	93;"	d
+J1939_PGN0_COMMANDED_ADDRESS	J1939.H	118;"	d
+J1939_PGN0_REQ_ADDRESS_CLAIM	J1939.H	114;"	d
+J1939_PGN1_COMMANDED_ADDRESS	J1939.H	117;"	d
+J1939_PGN1_REQ_ADDRESS_CLAIM	J1939.H	113;"	d
+J1939_PGN2_COMMANDED_ADDRESS	J1939.H	116;"	d
+J1939_PGN2_REQ_ADDRESS_CLAIM	J1939.H	112;"	d
+J1939_PROPRIETARY_PRIORITY	J1939.H	77;"	d
+J1939_Poll	J1939.C	/^void J1939_Poll( unsigned long ElapsedTime )$/;"	f
+J1939_REQUEST_PRIORITY	J1939.H	78;"	d
+J1939_RTS_CONTROL_BYTE	J1939.H	106;"	d
+J1939_ReceiveMessages	J1939.C	/^static void J1939_ReceiveMessages( void )$/;"	f	file:
+J1939_RequestForAddressClaimHandling	J1939.C	/^static void J1939_RequestForAddressClaimHandling( void )$/;"	f	file:
+J1939_TP_CM_PRIORITY	J1939.H	80;"	d
+J1939_TP_DT_PRIORITY	J1939.H	81;"	d
+J1939_TRUE	J1939.C	61;"	d	file:
+J1939_TRUE	J1939.H	70;"	d
+J1939_TransmitMessages	J1939.C	/^static unsigned char J1939_TransmitMessages( void )$/;"	f	file:
+LastTXBufferUsed	J1939.C	/^static unsigned char LastTXBufferUsed = 0;$/;"	v	file:
+MAPPED_CON	J1939.C	87;"	d	file:
+MAPPED_CONbits	J1939.C	86;"	d	file:
+MAPPED_SIDH	J1939.C	88;"	d	file:
+MAPPED_TXREQ	J1939.C	90;"	d	file:
+MAPPED_TXREQ	J1939.C	92;"	d	file:
+OneMessage	J1939.C	/^J1939_MESSAGE 					OneMessage;$/;"	v
+PDUFormat	J1939.H	/^		unsigned char	PDUFormat;					\/\/ CA should use only PDUFormat.$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+PDUFormat_Top	J1939.H	/^		unsigned int	PDUFormat_Top		: 3;	\/\/ This needs pre and post processing.$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+PDUSpecific	J1939.H	/^		unsigned char	PDUSpecific;$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+PIE3Val	J1939.H	/^			unsigned char	PIE3Val;$/;"	m	struct:TX_BUFFER_INFO_STRUCT
+Priority	J1939.H	/^		unsigned int	Priority			: 3;$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+RC_CANNOTRECEIVE	J1939.H	62;"	d
+RC_CANNOTTRANSMIT	J1939.H	63;"	d
+RC_PARAMERROR	J1939.H	64;"	d
+RC_QUEUEEMPTY	J1939.H	60;"	d
+RC_QUEUEFULL	J1939.H	61;"	d
+RC_SUCCESS	J1939.H	59;"	d
+RTR	J1939.H	/^		unsigned int	RTR					: 4;	\/\/ RTR bit, value always 0x00$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+RXHead	J1939.C	/^unsigned char 					RXHead;$/;"	v
+RXQueue	J1939.C	/^J1939_MESSAGE 					RXQueue[J1939_RX_QUEUE_SIZE];$/;"	v
+RXQueueCount	J1939.C	/^unsigned char 					RXQueueCount;$/;"	v
+RXTail	J1939.C	/^unsigned char 					RXTail;$/;"	v
+ReceivedMessagesDropped	J1939.H	/^		unsigned int	ReceivedMessagesDropped			: 1; };$/;"	m	struct:J1939_FLAGS_UNION::__anon2
+Res	J1939.H	/^		unsigned int	Res					: 1;$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+SET_NETWORK_WINDOW_BITS	J1939.C	106;"	d	file:
+SET_NETWORK_WINDOW_BITS	J1939.C	108;"	d	file:
+SendOneMessage	J1939.C	/^void SendOneMessage( J1939_MESSAGE *MsgPtr )$/;"	f
+SetAddressFilter	J1939.C	/^void SetAddressFilter( unsigned char Address )$/;"	f
+SetECANMode	J1939.C	/^void SetECANMode( unsigned char Mode )$/;"	f
+SourceAddress	J1939.H	/^		unsigned char	SourceAddress;$/;"	m	struct:J1939_MESSAGE_UNION::__anon1
+TRUE	J1939.C	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	e	enum:_BOOL	file:
+TRUE	J1939.H	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	e	enum:_BOOL
+TXBIEVal	J1939.H	/^			unsigned char	TXBIEVal;$/;"	m	struct:TX_BUFFER_INFO_STRUCT
+TXHead	J1939.C	/^unsigned char 					TXHead;$/;"	v
+TXIntsEnabled	J1939.C	/^	unsigned char				TXIntsEnabled;$/;"	v
+TXQueue	J1939.C	/^J1939_MESSAGE 					TXQueue[J1939_TX_QUEUE_SIZE];$/;"	v
+TXQueueCount	J1939.C	/^unsigned char 					TXQueueCount;$/;"	v
+TXTail	J1939.C	/^unsigned char 					TXTail;$/;"	v
+TX_BUFFER_INFO_STRUCT	J1939.H	/^		struct TX_BUFFER_INFO_STRUCT {$/;"	s
+WaitingForAddressClaimContention	J1939.H	/^		unsigned int	WaitingForAddressClaimContention: 1;$/;"	m	struct:J1939_FLAGS_UNION::__anon2
+WindowBits	J1939.H	/^			unsigned char	WindowBits;	};$/;"	m	struct:TX_BUFFER_INFO_STRUCT
+_BOOL	J1939.C	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	g	file:
+_BOOL	J1939.H	/^typedef enum _BOOL { FALSE = 0, TRUE } BOOL;$/;"	g
+__J1939_H	J1939.H	51;"	d
+__J1939_SOURCE	J1939.C	55;"	d	file:
