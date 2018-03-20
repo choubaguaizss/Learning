@@ -1,11 +1,10 @@
 #include <stdio.h>
+#include "include/common.h"
 #include "include/bit_manip.h"
 //#include "include/pointers.h"
 //#include "include/struct_union.h"
 //#include "include/linkedlist.h"
 //#include "include/interesting.h"
-#define EXIT_PROGRAM 9
-#define MAX_TRY 5
 void print_options_main();
 
 int main ()
