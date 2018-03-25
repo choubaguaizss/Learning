@@ -1,3 +1,6 @@
+#define TRUE 1
+#define FALSE 0
+
 void bit_manip_main();
 void set_bit(unsigned int *p_word, unsigned char position);
 void clear_bit(unsigned int *p_word, unsigned char position);

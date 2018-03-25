@@ -3,9 +3,8 @@
 #include "include/bit_manip.h"
 //#include "include/pointers.h"
 #include "include/struct_union.h"
-#include "include/str_manip.h"
 //#include "include/linkedlist.h"
-#include "include/interesting.h"
+//#include "include/interesting.h"
 void print_options_main();
 
 int main ()
@@ -28,23 +27,7 @@ int main ()
 				exit_count = 0;
 				break;
 			case 2:
-				//pointers_main();
-				exit_count = 0;
-				break;
-			case 3:
-				struct_union_main();
-				exit_count = 0;
-				break;
-			case 4:
-				//function_pointers_main();
-				exit_count = 0;
-				break;
-			case 5:
-				str_manip_main();
-				exit_count = 0;
-				break;
-			case 6:
-				interesting_main();
+				printf("case 2\r\n");
 				exit_count = 0;
 				break;
 			default:
@@ -53,6 +36,8 @@ int main ()
 				break;
 		}
 	}
+	//printf("Number*10 is: %d\r\n", multiply10(status));
+	//printf("no of bit in the number is %d\r\n",count_bit((unsigned char)status));
 }
 void print_options_main()
 {
@@ -61,9 +46,5 @@ void print_options_main()
 	printf("2.Pointers\r\n"); 
 	printf("3.Structures and unions\r\n");
 	printf("4.Function pointers\r\n");
-	printf("5.String manipulation\r\n");
-	printf("6.Interesting stuff\r\n");
-	printf("0. Exit program\r\n");
-	printf("option: ");
-	
+	printf("5.Others\r\noption: ");
 }

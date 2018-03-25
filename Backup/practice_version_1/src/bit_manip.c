@@ -98,10 +98,11 @@ void print_options_bitmanip()
 	printf("7. Get position of the lowest set bit in a word\r\n");
 	printf("8. check if a number is power of 2\r\n");
 	printf("9. Multiply a number with 10 using logical operations\r\n");
-	printf("0. Exit Bit manipulation\r\n");
 	printf("Option: ");
 }
-
+void get_inputs()
+{
+	}
 void set_bit(unsigned int *p_word, unsigned char position)
 {
 	printf("so you want to set %d position in the word having current value %d\r\n",position+1,*p_word);
