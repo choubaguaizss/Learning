@@ -6,3 +6,44 @@ Static Debugging
 
 Dynamic debugging
 	Debugging at run time using debugging hardware such as JTAG is called dynamic debugging.
+
+Useful commands
+
+nm
+objdump
+elfdump
+
+GIT Cheat sheet
+https://www.ibm.com/developerworks/aix/library/au-gdb.html
+#gdb <executable> <arguments>
+(gdb)run 		-> run the program
+(gdb)kill		-> Kill the running program
+
+Stepping
+
+(gdb)step 		-> run a step
+(gdb)next 		->  run a program line, a function is considered a line.
+(gdb)continue 		-> normal execution
+(gdb)finish 		-> run till return of the current function.
+
+Break
+
+(gdb)break <where> 	-> break the program at <where>
+<where> 		-> line_number, function_name, file:line_number
+(gdb)delete <breakpoint#> -> remove a break point
+(gdb)clear 		-> delete all breakpoint
+(gdb)enable <breakpoint#> 		-> enable breakpoint#
+(gdb)disable <breakpoint#> 		-> disable breakpoint#
+
+Watchpoints
+
+Variable and memory
+Conditions
+Examining the stack
+Manipulating the program
+informations
+signals
+sources
+format
+Threads
+
